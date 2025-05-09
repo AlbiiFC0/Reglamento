@@ -1,0 +1,165 @@
+body {
+  background-image: url('indexfondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra vertical */
+  align-items: center;     /* centra horizontal */
+  min-height: 100vh;
+  padding: 30px 15px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.regla {
+  display: flex;
+  align-items: center;
+  background-color: #999999;
+  border-radius: 20px;
+  margin: 15px 0;
+  padding: 10px 20px;
+  max-width: 600px;
+  width: 90%;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  flex-wrap: wrap;
+}
+
+.regla-num {
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #555555;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.regla-texto {
+  font-size: 16px;
+  flex: 1;
+}
+
+button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #333333;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.regla {
+  animation: aparecer 0.5s ease forwards;
+  opacity: 0;
+}
+
+.acordeon-btn {
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.acordeon-contenido {
+  padding: 15px;
+  background-color: #444;
+  color: white;
+  border-radius: 0 0 12px 12px;
+  display: none;
+  margin-bottom: 10px;
+}
+
+.acordeon-btn.active + .acordeon-contenido {
+  display: block;
+}
+
+.botonera {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.boton-num {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: #333;
+  color: white;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.boton-num:hover {
+  transform: scale(1.1);
+}
+
+.tarjeta-explicacion {
+  background-color: #444;
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tarjeta-explicacion.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
