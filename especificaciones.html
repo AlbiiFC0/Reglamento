@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Especificaciones</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Especificaciones</h1>
+
+    <div class="botonera">
+      <button class="boton-num" data-indice="0">1</button>
+      <button class="boton-num" data-indice="1">2</button>
+      <button class="boton-num" data-indice="2">3</button>
+      <button class="boton-num" data-indice="3">4</button>
+      <button class="boton-num" data-indice="4">5</button>
+      <button class="boton-num" data-indice="5">6</button>
+      <button class="boton-num" data-indice="6">7</button>
+      <button class="boton-num" data-indice="7">8</button>
+      <button class="boton-num" data-indice="8">9</button>
+    </div>
+
+    <div class="tarjeta-explicacion" id="explicacion"></div>
+
+    <button onclick="location.href='index.html'">Volver al inicio</button>
+  </div>
+
+  <script>
+    const explicaciones = [
+      "Esta regla no aplica con familia. Al pedir permiso deberas mencionar el nombre de los involucrados para ahorrar tiempo. Se aplica la Ley de excepciones",
+      "Esta regla es facil, no acercarse demasiado a algun hombre con el proposito de olerlo intencionalmente.",
+      "Esta regla no aplica con famlia. Deberas mencionar el nombre de los involucrados. Se aplica la Ley de Excepciones.",
+      "Deberas notificarme cuando alguien con quien no mantenias una conversacion antes te mande dm,al igual que deberas informarme cada que te llegue una solicitud de seguimiento nueva y mostrarme el perfil.",
+      "Decirme cada que te veas involucrada en algun plan, ya sea propuesto por amigos o por ti misma. de igual manera mencionar el nombre de los involucrados, la actividad planeada,hora y lugar. En base a esto te podre decir si puedes hacerlo o no. Principalmente pensando en tu seguridad.",
+      "No podras usar alguna prenda de cualquier otro hombre que no sea yo.",
+      "Deberas mandarme captura de cada mensaje que el profe de mate te llegue a mandar, sin importar lo insignificante que sea, esto a la mayor brevedad posible.",
+      "No podras comer chicle tan seguido por posible riesgo hacia tu salud. Deberas respetar el limite de una semana, por lo que si comes uno, no podras comer otro dentro de una semana.",
+      "Deberas eliminar cualquier contenido que yo te diga que elimines, como historias o notas,solo cuando no sean de mi agrado, sin poner peros ni objeciones.",
+    ];
+
+    const botones = document.querySelectorAll(".boton-num");
+    const tarjeta = document.getElementById("explicacion");
+
+    botones.forEach(boton => {
+      boton.addEventListener("click", () => {
+        const i = boton.getAttribute("data-indice");
+        tarjeta.innerHTML = `<p>${explicaciones[i]}</p>`;
+        tarjeta.classList.add("mostrar");
+      });
+    });
+  </script>
+</body>
+</html>
