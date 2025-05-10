@@ -159,3 +159,22 @@ button:hover {
 .boton-num:hover {
   transform: scale(1.1);
 }
+.tarjeta-explicacion {
+  font-size: 30px; /* Esto hace que el texto se vea más grande */
+  background-color: #444;
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tarjeta-explicacion.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
