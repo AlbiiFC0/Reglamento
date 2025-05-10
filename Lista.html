@@ -6,20 +6,35 @@
   <title>Lista</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .lista-container {
-      max-width: 700px;
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: url('amur.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 800px;
       margin: 0 auto;
       padding: 30px 20px;
       color: white;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 15px;
-      animation: aparecer 0.5s ease forwards;
-      opacity: 0;
+      text-align: center;
     }
 
     h2 {
       margin-bottom: 20px;
-      text-align: center;
+    }
+
+    .lista-container {
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .item {
@@ -27,26 +42,19 @@
       justify-content: space-between;
       align-items: center;
       background-color: #444;
-      margin-bottom: 15px;
-      padding: 15px 20px;
+      padding: 12px 15px;
       border-radius: 10px;
       animation: aparecer 0.5s ease forwards;
-      opacity: 0;
     }
-
-    .item:nth-child(1) { animation-delay: 0.1s; }
-    .item:nth-child(2) { animation-delay: 0.2s; }
-    .item:nth-child(3) { animation-delay: 0.3s; }
-    .item:nth-child(4) { animation-delay: 0.4s; }
 
     .descripcion {
       flex: 1;
-      padding-right: 15px;
+      text-align: left;
     }
 
     .puntuacion {
       background-color: #222;
-      padding: 10px 15px;
+      padding: 8px 12px;
       border-radius: 8px;
       font-weight: bold;
       color: #f8f8f8;
@@ -54,49 +62,65 @@
       text-align: center;
     }
 
+    .total {
+      margin-top: 15px;
+      font-size: 1em;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #333;
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
     @keyframes aparecer {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
       from {
         opacity: 0;
         transform: translateY(15px);
       }
-    }
-
-    button {
-      margin-top: 30px;
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="lista-container">
-      <h2>Lista de cosas importantes</h2>
-      
+    <h2>Lista de desobediencia</h2>
+
+    <div class="lista-container" id="lista">
       <div class="item">
-        <div class="descripcion">Decir las cosas a tiempo.</div>
-        <div class="puntuacion">5 pts</div>
+        <div class="descripcion">Lista vacia...</div>
+        <div class="puntuacion" data-puntos="0">0 pts</div>
       </div>
 
-      <div class="item">
-        <div class="descripcion">No guardar cosas que incomoden.</div>
-        <div class="puntuacion">4 pts</div>
-      </div>
-
-      <div class="item">
-        <div class="descripcion">Mostrar interés y ser detallista.</div>
-        <div class="puntuacion">3 pts</div>
-      </div>
-
-      <div class="item">
-        <div class="descripcion">Recordar lo que más importa: el amor.</div>
-        <div class="puntuacion">6 pts</div>
-      </div>
     </div>
+
+    <div class="total" id="totalPuntos">Puntos totales: 0</div>
 
     <button onclick="location.href='index.html'">Volver al inicio</button>
   </div>
+
+  <script>
+    const puntuaciones = document.querySelectorAll('.puntuacion');
+    let total = 0;
+
+    puntuaciones.forEach(p => {
+      total += parseInt(p.dataset.puntos);
+    });
+
+    document.getElementById('totalPuntos').textContent = `Puntos totales: ${total}`;
+  </script>
 </body>
 </html>
