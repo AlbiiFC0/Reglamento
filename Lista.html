@@ -1,138 +1,140 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPEhtml>
+<htmllang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lista</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background: url('amur.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
+<metacharset="UTF-8"/>
+<metaname="viewport"content="width=device-width,initial-scale=1.0"/>
+<title>Lista</title>
+<linkrel="stylesheet"href="style.css"/>
+<style>
+body{
+margin:0;
+padding:0;
+font-family:sans-serif;
+background:url('amur.jpg')no-repeatcentercenterfixed;
+background-size:cover;
+}
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 30px 20px;
-      color: white;
-      text-align: center;
-    }
+.container{
+max-width:800px;
+margin:0auto;
+padding:30px20px;
+color:white;
+text-align:center;
+}
 
-    h2 {
-      margin-bottom: 20px;
-    }
+h2{
+margin-bottom:20px;
+}
 
-    .lista-container {
-      max-height: 300px;
-      overflow-y: auto;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+.lista-container{
+max-height:300px;
+overflow-y:auto;
+padding:10px;
+background-color:rgba(0,0,0,0.5);
+border-radius:15px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
 
-    .item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #444;
-      padding: 12px 15px;
-      border-radius: 10px;
-      animation: aparecer 0.5s ease forwards;
-    }
+.item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background-color:#444;
+padding:12px15px;
+border-radius:10px;
+animation:aparecer0.5seaseforwards;
+}
 
-    .descripcion {
-      flex: 1;
-      text-align: left;
-    }
+.descripcion{
+flex:1;
+text-align:left;
+}
 
-    .puntuacion {
-      background-color: #222;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-weight: bold;
-      color: #f8f8f8;
-      min-width: 50px;
-      text-align: center;
-    }
+.puntuacion{
+background-color:#222;
+padding:8px12px;
+border-radius:8px;
+font-weight:bold;
+color:#f8f8f8;
+min-width:50px;
+text-align:center;
+}
 
-    .total {
-      margin-top: 15px;
-      font-size: 1em;
-      font-weight: bold;
-      color: #ffffff;
-      background-color: #333;
-      padding: 10px;
-      border-radius: 10px;
-      display: inline-block;
-    }
+.total{
+margin-top:15px;
+font-size:1em;
+font-weight:bold;
+color:#ffffff;
+background-color:#333;
+padding:10px;
+border-radius:10px;
+display:inline-block;
+}
 
-    button {
-      margin-top: 25px;
-      padding: 10px 20px;
-      border: none;
-      background-color: #333;
-      color: white;
-      border-radius: 10px;
-      cursor: pointer;
-    }
+button{
+margin-top:25px;
+padding:10px20px;
+border:none;
+background-color:#333;
+color:white;
+border-radius:10px;
+cursor:pointer;
+}
 
-    @keyframes aparecer {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+@keyframesaparecer{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <h2>Lista de desobediencia</h2>
+<divclass="container">
+<h2>Listadedesobediencia</h2>
 
-    <div class="lista-container" id="lista">
-      <div class="item">
-        <div class="descripcion">Seguidor injustificado</div>
-        <div class="puntuacion" data-puntos="2">2 pts</div>
-      </div>
-            <div class="item">
-        <div class="descripcion">Seguidor injustificado (2)</div>
-        <div class="puntuacion" data-puntos="2">2 pts</div>
-      </div
-                  <div class="item">
-        <div class="descripcion"> Incidencia nivel 3 (3)</div>
-        <div class="puntuacion" data-puntos="3">3 pts</div>
-      </div>
-                  <div class="item">
-        <div class="descripcion"> rompio regla 5 (3)</div>
-        <div class="puntuacion" data-puntos="3">3 pts</div>
-      </div>
+<divclass="lista-container"id="lista">
+<divclass="item">
+<divclass="descripcion">Seguidorinjustificado</div>
+<divclass="puntuacion"data-puntos="2">2pts</div>
+</div>
 
-    </div>
+<divclass="item">
+<divclass="descripcion">Seguidorinjustificado(2)</div>
+<divclass="puntuacion"data-puntos="2">2pts</div>
 
-    <div class="total" id="totalPuntos">Puntos totales: 0</div>
+<divclass="item">
+<divclass="descripcion">Romper regla 5</div>
+<divclass="puntuacion"data-puntos="3">3pts</div>
 
-    <button onclick="location.href='index.html'">Volver al inicio</button>
-  </div>
+<divclass="item">
+<divclass="descripcion">Incidencia nivel 3</div>
+<divclass="puntuacion"data-puntos="3">3pts</div>
 
-  <script>
-    const puntuaciones = document.querySelectorAll('.puntuacion');
-    let total = 0;
+<divclass="item">
+<divclass="descripcion">Romper regla 8</div>
+<divclass="puntuacion"data-puntos="2">2pts</div>
 
-    puntuaciones.forEach(p => {
-      total += parseInt(p.dataset.puntos);
-    });
+<divclass="total"id="totalPuntos">Puntostotales:0</div>
 
-    document.getElementById('totalPuntos').textContent = `Puntos totales: ${total}`;
-  </script>
+<buttononclick="location.href='index.html'">Volveralinicio</button>
+</div>
+
+<script>
+constpuntuaciones=document.querySelectorAll('.puntuacion');
+lettotal=0;
+
+puntuaciones.forEach(p=>{
+total+=parseInt(p.dataset.puntos);
+});
+
+document.getElementById('totalPuntos').textContent=`Puntostotales:${total}`;
+</script>
 </body>
 </html>
