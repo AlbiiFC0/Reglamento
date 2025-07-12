@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Especificaciones</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Especificaciones</h1>
+
+    <div class="carrusel-contenedor">
+      <div class="carrusel">
+        <button class="boton-num" data-indice="0">1</button>
+        <button class="boton-num" data-indice="1">2</button>
+        <button class="boton-num" data-indice="2">3</button>
+        <button class="boton-num" data-indice="3">4</button>
+        <button class="boton-num" data-indice="4">5</button>
+        <button class="boton-num" data-indice="5">6</button>
+        <button class="boton-num" data-indice="6">7</button>
+        <button class="boton-num" data-indice="7">8</button>
+        <button class="boton-num" data-indice="8">9</button>
+        <button class="boton-num" data-indice="9">10</button>
+      </div>
+    </div>
+
+    <div class="tarjeta-explicacion" id="explicacion"></div>
+
+    <button onclick="location.href='index.html'">Volver al inicio</button>
+  </div>
+
+  <script>
+    const explicaciones = [
+      "<strong>Pedir permiso para realizar una llamada con otra persona:</strong> Esta regla no aplica con familia. Al pedir permiso deberás mencionar el nombre de los involucrados para ahorrar tiempo. Se aplica la Ley de excepciones. <strong>Valor: 5</strong>",
+      "<strong>No está permitido acercarse con la intención de percibir el aroma de otra persona:</strong> Esta regla es fácil, no acercarse demasiado a algún hombre con el propósito de olerlo intencionalmente. <strong>Valor: 3</strong>",
+      "<strong>Pedir permiso para jugar con alguien más:</strong> Esta regla no aplica con familia. Deberás mencionar el nombre de los involucrados. Se aplica la Ley de Excepciones. <strong>Valor: 5</strong>",
+      "<strong>Notificar sobre nuevos DM y solicitudes:</strong> Deberás notificarme cuando alguien con quien no mantenías una conversación antes te mande DM, al igual que deberás informarme cada que te llegue una solicitud de seguimiento nueva, mostrarme el perfil y pedir permiso para aceptarla. (No aplica con familia) <strong>Valor: 4</strong>",
+      "<strong>Notificar sobre planes propuestos para revisión:</strong> Decirme cada que te veas involucrada en algún plan, ya sea propuesto por amigos o por ti misma. De igual manera, mencionar el nombre de los involucrados, la actividad planeada, hora y lugar. En base a esto te podré decir si puedes hacerlo o no. Principalmente pensando en tu seguridad. <strong>Valor: 4</strong>",
+      "<strong>Prohibido usar prendas de ropa que no sean de mi propiedad:</strong> No podrás usar alguna prenda de cualquier otro hombre que no sea yo. <strong>Valor: 5</strong>",
+      "<strong>Notificar nuevos mensajes del profesor de matemáticas:</strong> Deberás mandarme captura de cada mensaje que el profe de mate te llegue a mandar, sin importar lo insignificante que sea, esto a la mayor brevedad posible. <strong>Valor: 3</strong>",
+      "<strong>No comer chicle frecuentemente respetando el límite:</strong> No podrás comer chicle tan seguido por posible riesgo hacia tu salud. Deberás respetar el límite de una semana, por lo que si comes uno, no podrás comer otro dentro de una semana. <strong>Valor: 4</strong>",
+      "<strong>Eliminar contenido que no sea de mi agrado:</strong> Deberás eliminar cualquier contenido que yo te diga que elimines, como historias o notas, solo cuando no sean de mi agrado, sin poner peros ni objeciones. <strong>Valor: 5</strong>",
+      "<strong>No morder a otra persona:</strong> Aprecio la exclusividad, así que solo me podrás morder a mí. <strong>Valor: 5</strong>"
+    ];
+
+    const botones = document.querySelectorAll(".boton-num");
+    const tarjeta = document.getElementById("explicacion");
+
+    botones.forEach(boton => {
+      boton.addEventListener("click", () => {
+        const i = boton.getAttribute("data-indice");
+        tarjeta.innerHTML = `<p>${explicaciones[i]}</p>`;
+        tarjeta.classList.add("mostrar");
+      });
+    });
+  </script>
+</body>
+</html>
